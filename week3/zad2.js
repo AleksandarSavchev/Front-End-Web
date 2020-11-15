@@ -6,9 +6,11 @@ function getDates(date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
+let arr1 = [];
 let arr2 = [];
 
 for (i in dates) {
+    arr1[i] = (dates[i].getDate() < 10 ? "0" + dates[i].getDate() : dates[i].getDate()) + "." + ((dates[i].getMonth() < 9 ? "0" + dates[i].getMonth(): dates[i].getMonth()) + 1) + "." + dates[i].getFullYear()
     arr2[i] = [];
     arr2[i][0] = getDates(dates[i]);
     arr2[i][1] = dates[i].getDay();
@@ -35,9 +37,9 @@ function den(chislo) {
     }
 }
 
+
 for (i in arr2) {
-    arr3[i] = "Дата: " + dates[i].getDate() + "." + (dates[i].getMonth() + 1) + "." + dates[i].getFullYear() + ", час: " +
-    (dates[i].getHours() < 10 ? "0" + dates[i].getHours() : dates[i].getHours())+ ":" + (dates[i].getMinutes() < 10 ? "0" + dates[i].getMinutes() : dates[i].getMinutes())
+    arr3[i] = "Дата: " + arr1[i] + ", час: " + (dates[i].getHours() < 10 ? "0" + dates[i].getHours() : dates[i].getHours()) + ":" + (dates[i].getMinutes() < 10 ? "0" + dates[i].getMinutes() : dates[i].getMinutes())
     + ":" + (dates[i].getSeconds() < 10 ? "0" + dates[i].getSeconds() : dates[i].getSeconds()) + ", " + den(arr2[i][1]) + ", " + arr2[i][0] + " дена."
 }
 
