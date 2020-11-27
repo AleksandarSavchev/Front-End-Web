@@ -1,0 +1,194 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 100%;
+    background-image: linear-gradient(-100deg, #A2F2F1 0%, #B19AFE 100%);
+}
+
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+#title {
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+#search {
+    margin: auto 2rem auto auto;
+    max-width: 12rem;
+    height: 1.2rem;
+    width: 100%;
+    background-color: rgb(245, 245, 250);
+    border-radius: 20px;
+    padding-top: 0.4rem;
+}
+
+#s {
+    padding-left: 1rem;
+    color: #848694;
+}
+
+#si {
+    float: right;
+    margin-right: 1rem;
+}
+
+#cont1 {
+    margin: 2.3rem 0.5rem auto auto;
+    max-width: 18rem;
+    width: 90%;
+    background-color: white;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#avatar1 {
+    display: block;
+    margin: 1rem auto 0.25rem auto;
+    width: 5.25rem;
+    height: 5.25rem;
+}
+
+#name {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#stat {
+    display: flex;
+    height: 3.75rem;
+    background-color: rgb(245, 245, 250);
+}
+
+.w {
+    font-size: 0.75rem;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.num {
+    font-size: 1.125rem;
+    color: rgb(125, 205, 225);
+}
+
+button {
+    margin: auto 1rem auto auto;
+    height: 2.2rem;
+    color: rgb(125, 205, 225);
+    background-color: rgb(245, 245, 250);
+    border: 1.5px solid rgb(125, 205, 225);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#cont2 {
+    margin: 2.3rem auto auto 0.25rem;
+    width: 90%;
+    max-width: 55rem;
+    background-color: white;
+}
+
+#mess {
+    display: flex;
+    height: 3rem;
+    background-color: rgb(245, 250, 253);
+}
+
+#smalla {
+    width: 2rem;
+    height: 2rem;
+    margin: auto 1rem auto 2rem;
+}
+
+#messg {
+    background-color: white;
+    border: 1px solid rgb(245, 245, 250);
+    border-radius: 20px;
+    margin: auto 2rem auto 0rem;
+    height: 1.6rem;
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
+#say {
+    padding-left: 1rem;
+    color: rgb(125, 205, 225);
+}
+
+#comm {
+    color: rgb(125, 205, 225);
+    float: right;
+    margin-right: 1rem;
+}
+
+.posts {
+    display: flex;
+    padding: 1rem;
+    min-height: 7rem;
+    font-size: 0.875rem;
+    border-top: 3px solid rgb(245, 245, 250);
+}
+
+.avatar2 {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.75rem;
+}
+
+.innerp {
+    margin-left: 0.5rem;
+    flex: 1;
+}
+
+.namep {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.time {
+    color: #848694;
+}
+
+.rnum {
+    padding-right: 2rem;
+}
+
+.circle {
+    font-size: 0.25rem;
+    color: #848694;
+    padding-top: 0rem;
+}
+
+.x {
+    color: #848694;
+    float: right;
+}
+
+@media (max-width: 870px) {
+    body {
+        flex-direction: column;
+    }
+    #cont1 {
+        max-width: 100rem;
+        margin: 3rem 0rem 0rem 0rem;
+    }
+    #cont2 {
+        max-width: 100rem;
+        margin: 0rem 0rem 0rem 0rem;
+    }
+}
