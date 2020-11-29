@@ -63,6 +63,7 @@ function valPass() {
 
 function cbreg(check, errorCode, errorMessage) {
     if (check) {
+        alert("Успешна регистрация!!!");
         window.location.href = "./posts.html";
     }
     else {
@@ -94,7 +95,6 @@ function register(event) {
     if (!validateEmail(email) || !validatePass(pass)) {
         return false;
     }
-    alert("Успешно попълнени емайл и парола!!!");
 
     window.auth.register(username, email, pass, cbreg);
 }
@@ -108,7 +108,6 @@ function login(event) {
     if (!validateEmail(email) || !validatePass(pass)) {
         return false;
     }
-    alert("Успешно попълнени емайл и парола!!!");
-    
+
     window.auth.login(email, pass, cblog);
 }
