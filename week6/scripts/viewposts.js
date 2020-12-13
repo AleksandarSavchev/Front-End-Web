@@ -43,8 +43,8 @@
 	
 	firebase.auth().onAuthStateChanged(user => {
 		auth.getUserStats(user.uid).once('value').then((data) => {
-			let tweets = data ? data.val().tweets : 0;
-			let likes = data ? data.val().likes : 0;
+			let tweets = data.val() ? data.val().tweets : 0;
+			let likes = data.val() ? data.val().likes : 0;
 			document.getElementById("profile-posts-count").innerHTML = tweets;
 			document.getElementById("profile-likes-count").innerHTML = likes;
 		});
@@ -63,7 +63,6 @@
 		for(let react of reacts) {
 			react.addEventListener('click', event => {
 				let id = event.target.getAttribute('data-id');
-				let stats = db.ref('tweets/' + id);
 
 				if(event.target.parentElement.classList.contains('dislike-container')) {
 					tweet.incrementDislikes(id);
@@ -73,6 +72,28 @@
 				}
 			});
 		}
+		let del = cont.querySelector('.post-close');
+		del.addEventListener('click', event => {
+			let id = event.target.getAttribute('data-id');
+			let stat = db.ref('tweets/' + id);
+
+			stat.once('value').then(snapshot => {
+				if(snapshot.val().userId == firebase.auth().currentUser.uid) {
+					tweet.delete(id);
+					let userRef = db.ref('users/' + snapshot.val().userId);
+					userRef.once('value').then(snapshot => {
+						if (snapshot.val()) {
+							let tweets = parseInt(snapshot.val()['tweets']) - 1;
+		
+							userRef.update({
+								tweets: tweets
+							});
+						} 
+					});
+					document.getElementById(id).style.display = "none";
+				}
+			})
+		})
 		postContainer.insertBefore(cont, postContainer.firstChild);
 	});
 
